@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 50vh;
+    background-color: cornsilk;
+
+}
+
+h1{
+    font-family: Arial, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.gallery {
+    width: 150%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    margin: 0; 
+}
+
+.gallery-image {
+    width: 100%;
+    display: none;
+    animation: fade 0.5s ease-in-out;
+    max-height: 400px; 
+    object-fit: contain; 
+}
+
+.gallery-image.active {
+    display: block;
+}
+
+.controls {
+    display: flex;
+    top: 20px;
+    transform: translateY(-80%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1 10px;
+}
+
+.controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1px 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s;
+}
+
+.controls button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.thumbnail-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px;
+    background-color: black;
+    width: 200%; 
+    max-width: 500px;
+}
+
+.thumbnail {
+    width: 80px; 
+    height: 25px;
+    margin: 0 2px;
+    cursor: pointer;
+    justify-content: center;
+    border: 5px solid transparent;
+    opacity: 0.7;
+    transition: border-color 0.3s, opacity 0.3s;
+    object-fit: cover; 
+}
+
+.thumbnail.active {
+    border-color: blackblue;
+    opacity: 1;
+}
+
+@keyframes fade {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
